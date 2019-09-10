@@ -144,19 +144,19 @@ elsif Gem::Version.new('2.1.0') <= Gem::Version.new(RUBY_VERSION) \
     end
 
     appraise 'rails4-mysql2' do
-      gem 'rails', '4.2.7.1'
-      gem 'mysql2', '< 0.5', platform: :ruby
+      gem 'rails', '4.2.11.1'
+      gem 'mysql2', '< 0.6', platform: :ruby
       gem 'activerecord-jdbcmysql-adapter', platform: :jruby
     end
 
     appraise 'rails4-postgres' do
-      gem 'rails', '4.2.7.1'
+      gem 'rails', '4.2.11.1'
       gem 'pg', '< 1.0', platform: :ruby
       gem 'activerecord-jdbcpostgresql-adapter', platform: :jruby
     end
 
     appraise 'rails4-postgres-redis' do
-      gem 'rails', '4.2.7.1'
+      gem 'rails', '4.2.11.1'
       gem 'pg', '< 1.0', platform: :ruby
       gem 'activerecord-jdbcpostgresql-adapter', platform: :jruby
       gem 'redis-rails'
@@ -252,19 +252,19 @@ elsif Gem::Version.new('2.2.0') <= Gem::Version.new(RUBY_VERSION) \
     end
 
     appraise 'rails4-mysql2' do
-      gem 'rails', '4.2.7.1'
-      gem 'mysql2', '< 0.5', platform: :ruby
+      gem 'rails', '4.2.11.1'
+      gem 'mysql2', '< 0.6', platform: :ruby
       gem 'activerecord-jdbcmysql-adapter', platform: :jruby
     end
 
     appraise 'rails4-postgres' do
-      gem 'rails', '4.2.7.1'
+      gem 'rails', '4.2.11.1'
       gem 'pg', '< 1.0', platform: :ruby
       gem 'activerecord-jdbcpostgresql-adapter', platform: :jruby
     end
 
     appraise 'rails4-postgres-redis' do
-      gem 'rails', '4.2.7.1'
+      gem 'rails', '4.2.11.1'
       gem 'pg', '< 1.0', platform: :ruby
       gem 'activerecord-jdbcpostgresql-adapter', platform: :jruby
       gem 'redis-rails'
@@ -272,7 +272,7 @@ elsif Gem::Version.new('2.2.0') <= Gem::Version.new(RUBY_VERSION) \
     end
 
     appraise 'rails4-postgres-sidekiq' do
-      gem 'rails', '4.2.7.1'
+      gem 'rails', '4.2.11.1'
       gem 'pg', '< 1.0', platform: :ruby
       gem 'activerecord-jdbcpostgresql-adapter', platform: :jruby
       gem 'sidekiq'
@@ -281,7 +281,7 @@ elsif Gem::Version.new('2.2.0') <= Gem::Version.new(RUBY_VERSION) \
 
     appraise 'rails5-mysql2' do
       gem 'rails', '~> 5.2.1'
-      gem 'mysql2', '< 0.5', platform: :ruby
+      gem 'mysql2', '< 0.6', platform: :ruby
     end
 
     appraise 'rails5-postgres' do
@@ -401,19 +401,19 @@ elsif Gem::Version.new('2.3.0') <= Gem::Version.new(RUBY_VERSION) \
     end
 
     appraise 'rails4-mysql2' do
-      gem 'rails', '4.2.7.1'
-      gem 'mysql2', '< 0.5', platform: :ruby
+      gem 'rails', '4.2.11.1'
+      gem 'mysql2', '< 0.6', platform: :ruby
       gem 'activerecord-jdbcmysql-adapter', platform: :jruby
     end
 
     appraise 'rails4-postgres' do
-      gem 'rails', '4.2.7.1'
+      gem 'rails', '4.2.11.1'
       gem 'pg', '< 1.0', platform: :ruby
       gem 'activerecord-jdbcpostgresql-adapter', platform: :jruby
     end
 
     appraise 'rails4-postgres-redis' do
-      gem 'rails', '4.2.7.1'
+      gem 'rails', '4.2.11.1'
       gem 'pg', '< 1.0', platform: :ruby
       gem 'activerecord-jdbcpostgresql-adapter', platform: :jruby
       gem 'redis-rails'
@@ -421,7 +421,7 @@ elsif Gem::Version.new('2.3.0') <= Gem::Version.new(RUBY_VERSION) \
     end
 
     appraise 'rails4-postgres-sidekiq' do
-      gem 'rails', '4.2.7.1'
+      gem 'rails', '4.2.11.1'
       gem 'pg', '< 1.0', platform: :ruby
       gem 'activerecord-jdbcpostgresql-adapter', platform: :jruby
       gem 'sidekiq'
@@ -430,7 +430,7 @@ elsif Gem::Version.new('2.3.0') <= Gem::Version.new(RUBY_VERSION) \
 
     appraise 'rails5-mysql2' do
       gem 'rails', '~> 5.2.1'
-      gem 'mysql2', '< 0.5', platform: :ruby
+      gem 'mysql2', '< 0.6', platform: :ruby
     end
 
     appraise 'rails5-postgres' do
@@ -498,7 +498,7 @@ elsif Gem::Version.new('2.4.0') <= Gem::Version.new(RUBY_VERSION) \
   if RUBY_PLATFORM != 'java'
     appraise 'rails5-mysql2' do
       gem 'rails', '~> 5.2.1'
-      gem 'mysql2', '< 0.5', platform: :ruby
+      gem 'mysql2', '< 0.6', platform: :ruby
     end
 
     appraise 'rails5-postgres' do
@@ -531,7 +531,7 @@ elsif Gem::Version.new('2.4.0') <= Gem::Version.new(RUBY_VERSION) \
       gem 'actionpack'
       gem 'actionview'
       gem 'active_model_serializers', '>= 0.10.0'
-      gem 'activerecord', '< 5.1.5'
+      gem 'activerecord'
       gem 'aws-sdk'
       gem 'concurrent-ruby'
       gem 'dalli'
@@ -545,7 +545,7 @@ elsif Gem::Version.new('2.4.0') <= Gem::Version.new(RUBY_VERSION) \
       gem 'grpc'
       gem 'hiredis'
       gem 'mongo', '>= 2.8.0'
-      gem 'mysql2', '< 0.5', platform: :ruby
+      gem 'mysql2', '< 0.6', platform: :ruby
       gem 'racecar', '>= 0.3.5'
       gem 'rack'
       gem 'rack-test'
@@ -567,7 +567,7 @@ elsif Gem::Version.new('2.5.0') <= Gem::Version.new(RUBY_VERSION) \
   if RUBY_PLATFORM != 'java'
     appraise 'rails5-mysql2' do
       gem 'rails', '~> 5.2.1'
-      gem 'mysql2', '< 0.5', platform: :ruby
+      gem 'mysql2', '< 0.6', platform: :ruby
     end
 
     appraise 'rails5-postgres' do
@@ -614,7 +614,7 @@ elsif Gem::Version.new('2.5.0') <= Gem::Version.new(RUBY_VERSION) \
       gem 'grpc'
       gem 'hiredis'
       gem 'mongo', '>= 2.8.0'
-      gem 'mysql2', '< 0.5', platform: :ruby
+      gem 'mysql2', '< 0.6', platform: :ruby
       gem 'racecar', '>= 0.3.5'
       gem 'rack'
       gem 'rack-test'
@@ -635,7 +635,7 @@ elsif Gem::Version.new('2.6.0') <= Gem::Version.new(RUBY_VERSION)
   if RUBY_PLATFORM != 'java'
     appraise 'rails5-mysql2' do
       gem 'rails', '~> 5.2.1'
-      gem 'mysql2', '< 0.5', platform: :ruby
+      gem 'mysql2', '< 0.6', platform: :ruby
     end
 
     appraise 'rails5-postgres' do
@@ -682,7 +682,7 @@ elsif Gem::Version.new('2.6.0') <= Gem::Version.new(RUBY_VERSION)
       gem 'grpc'
       gem 'hiredis'
       gem 'mongo', '>= 2.8.0'
-      gem 'mysql2', '< 0.5', platform: :ruby
+      gem 'mysql2', '< 0.6', platform: :ruby
       gem 'racecar', '>= 0.3.5'
       gem 'rack'
       gem 'rack-test'
