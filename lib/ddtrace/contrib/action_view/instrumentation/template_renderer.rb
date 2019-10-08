@@ -93,6 +93,32 @@ module Datadog
               end
             end
 
+            def render_with_layout(*args, &block)
+              begin
+                template, layout_name = datadog_parse_args(*args)
+
+                datadog_render_with_layout(template, layout_name)
+              rescue StandardError => e
+                Datadog::Tracer.log.debug(e.message)
+              end
+
+              # TODO try subscribing to ActiveSupport::Notifications.instrument("render_#{name}.action_view", options) instead
+
+              # execute the original function anyway
+              super(*args) do |*block_args, &block_block|
+                layout = block_args[0]
+
+                if layout
+                  active_datadog_span.set_tag(
+                    Ext::TAG_LAYOUT,
+                    layout
+                  )
+                end
+
+                block.call(*block_args, &block_block)
+              end
+            end
+
             def render_template(*args)
               begin
                 template, layout_name = datadog_parse_args(*args)
@@ -107,10 +133,23 @@ module Datadog
             end
 
             def datadog_render_template(template, layout_name)
+              pp 1
               # update the tracing context with computed values before the rendering
               template_name = template.try('identifier')
+              pp 2
               template_name = Utils.normalize_template_name(template_name)
+              pp 3
+              # require 'pry'
+              # binding.pry
               layout = layout_name.try(:[], 'virtual_path') # Proc can be called without parameters since Rails 6
+              # layout = layout_name.call(@lookup_context, formats).virtual_path
+
+              # override render_with_layout instead?
+              # layout_name.call(@lookup_context, formats).virtual_path
+
+              pp 4
+
+              pp "HERE " * 10
 
               if template_name
                 active_datadog_span.set_tag(

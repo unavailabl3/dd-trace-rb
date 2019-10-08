@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base; end
 class TracingController < ActionController::Base
   include Rails.application.routes.url_helpers
 
-  layout 'application'
+  # layout 'application'
 
   self.view_paths = [
     ActionView::FixtureResolver.new(
